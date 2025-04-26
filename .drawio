@@ -1,0 +1,106 @@
+<mxfile>
+  <diagram id="MRvwVblzFliYrnxMJhZt" name="Page-1">
+    <mxGraphModel dx="1156" dy="1676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mainApp" value="AmazonReviewAnalyzer" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="20" y="-30" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="webScraper" value="WebScraper" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="280" y="10" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dataProcessor" value="DataProcessor" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="520" y="120" width="160" height="160" as="geometry">
+            <mxRectangle x="520" y="120" width="120" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="geminiIntegration" value="GeminiIntegration" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="360" y="330" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uiLayer" value="StreamlitUI" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="20" y="310" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="flow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" parent="1" source="uiLayer" target="mainApp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="mainApp" target="webScraper" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="webScraper" target="dataProcessor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="dataProcessor" target="geminiIntegration" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1" source="geminiIntegration" target="uiLayer" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="amazonApi" value="«interface»\nAmazon API" style="shape=umlInterface;" parent="1" vertex="1">
+          <mxGeometry x="285" y="190" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="geminiApi" value="«interface»\nGemini API" style="shape=umlInterface;metaEdit=1;dropTarget=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="360" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dep1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" parent="1" source="webScraper" target="amazonApi" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" parent="1" source="geminiIntegration" target="geminiApi" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="-yp83vN6GwnpRh-U_gYM" name="Page-1">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Main Components -->
+        <mxCell id="main" value="AmazonReviewAnalyzer" style="swimlane;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="webScraper" value="WebScraper" style="swimlane;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dataProc" value="DataProcessor" style="swimlane;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini" value="GeminiIntegration" style="swimlane;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="StreamlitUI" style="swimlane;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+        <!-- Interfaces -->
+        <mxCell id="amazonAPI" value="«interface»\nAmazon API" style="shape=umlInterface;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="300" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="geminiAPI" value="«interface»\nGemini API" style="shape=umlInterface;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <!-- Connections -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="webScraper" target="dataProc" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="dataProc" target="gemini" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="webScraper" target="amazonAPI" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="gemini" target="geminiAPI" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="gemini" target="ui" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" source="ui" target="main" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
